@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">ScreenPrompt</title>
+  <rect width="64" height="64" fill="#0c0d10"/>
+  <g fill="none" stroke="#f3f5f8" stroke-width="3" stroke-linecap="square">
+    <path d="M8 24V8h16M40 8h16v16M56 40v16H40M24 56H8V40"/>
+    <path d="m20 23 11 9-11 9M35 41h10" stroke="#9be15d"/>
+  </g>
+</svg>

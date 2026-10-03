@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">ScreenPrompt</title>
+  <desc id="desc">Запишите экран. Передайте агенту доказательства.</desc>
+  <rect width="1200" height="630" fill="#0c0d10"/>
+  <g opacity=".16" stroke="#f3f5f8">
+    <path d="M0 90h1200M0 180h1200M0 270h1200M0 360h1200M0 450h1200M0 540h1200"/>
+    <path d="M150 0v630M300 0v630M450 0v630M600 0v630M750 0v630M900 0v630M1050 0v630"/>
+  </g>
+  <path d="M0 485h202l42-110 66 174 70-226 78 162h144l42-63 52 63h176l38-124 56 218 66-183 70 89h198" fill="none" stroke="#9be15d" stroke-width="3"/>
+  <g transform="translate(72 68)" fill="none" stroke="#f3f5f8" stroke-width="4">
+    <path d="M0 24V0h24M48 0h24v24M72 48v24H48M24 72H0V48"/>
+    <path d="m20 24 15 12-15 12M41 48h15" stroke="#9be15d"/>
+  </g>
+  <text x="170" y="120" fill="#f3f5f8" font-family="Arial, sans-serif" font-size="34" font-weight="700">ScreenPrompt</text>
+  <text x="72" y="285" fill="#f3f5f8" font-family="Arial, sans-serif" font-size="76" font-weight="800" letter-spacing="-4">Запишите экран.</text>
+  <text x="72" y="374" fill="#9be15d" font-family="Arial, sans-serif" font-size="76" font-weight="800" letter-spacing="-4">Передайте доказательства.</text>
+  <text x="75" y="564" fill="#a8afbb" font-family="monospace" font-size="20">SCREEN → OCR / AX / VOICE → PROMPT / SCRIPT / INDEX</text>
+</svg>

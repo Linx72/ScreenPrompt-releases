@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0c0d10" />
+    <meta
+      name="description"
+      content="ScreenPrompt превращает короткую запись экрана в доказательный индекс, промпт для coding-агента и безопасный shell-скрипт."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:title" content="ScreenPrompt — покажите проблему, передайте контекст" />
+    <meta
+      property="og:description"
+      content="Запись экрана → OCR, Accessibility и голос → понятный пакет контекста для coding-агента."
+    />
+    <meta property="og:url" content="https://screenprompt.24oros.ru/" />
+    <meta property="og:image" content="https://screenprompt.24oros.ru/assets/og-card.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://screenprompt.24oros.ru/" />
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>ScreenPrompt — запись экрана в контекст для coding-агента</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержанию</a>
+
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="ScreenPrompt — на главную">
+        <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true">
+          <path d="M4 13V4h9M23 4h9v9M32 23v9h-9M13 32H4v-9" />
+          <path d="m12 13 6 5-6 5M20 23h6" />
+        </svg>
+        <span>ScreenPrompt</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+        data-menu-toggle
+      >
+        <span class="sr-only">Открыть меню</span>
+        <span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="site-navigation" aria-label="Основная навигация" data-menu>
+        <a href="#how">Как работает</a>
+        <a href="#features">Возможности</a>
+        <a href="#privacy">Приватность</a>
+        <a href="#download">Скачать</a>
+      </nav>
+
+      <a
+        class="header-github"
+        href="https://github.com/Linx72/ScreenPrompt-releases/releases"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Все версии
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8M13 3 3 13" /></svg>
+      </a>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <svg class="hero-signal" viewBox="0 0 1440 480" preserveAspectRatio="none" aria-hidden="true">
+          <path class="hero-signal-base" d="M0 356h252l42-108 70 176 74-226 82 158h144l40-63 48 63h205l39-124 60 219 64-183 74 144h286" />
+          <path class="hero-signal-live" d="M0 356h252l42-108 70 176 74-226 82 158h144l40-63 48 63h205l39-124 60 219 64-183 74 144h286" />
+        </svg>
+
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="status-dot"></span> Desktop utility · v0.1.0</p>
+          <h1 id="hero-title">
+            Запишите экран.<br />
+            Передайте агенту <em>доказательства.</em>
+          </h1>
+          <p class="hero-lede">
+            ScreenPrompt превращает короткую запись проблемы в понятный пакет контекста:
+            что было на экране, что вы нажали, где возникла ошибка и что можно сделать дальше.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#download" data-platform-cta>
+              <span>Скачать приложение</span>
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10m0 0 4-4m-4 4L6 9M4 17h12" /></svg>
+            </a>
+            <a class="text-link" href="#how">
+              Посмотреть процесс
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12m-4-4 4 4-4 4" /></svg>
+            </a>
+          </div>
+          <ul class="hero-notes" aria-label="Ключевые свойства">
+            <li>macOS · Windows · Linux</li>
+            <li>RU / EN</li>
+            <li>Text-only по умолчанию</li>
+          </ul>
+        </div>
+
+        <div class="hero-proof reveal" aria-label="Пример работы ScreenPrompt">
+          <div class="proof-window">
+            <div class="window-bar">
+              <div class="window-controls" aria-hidden="true"><span></span><span></span><span></span></div>
+              <span class="window-title">capture://session-018</span>
+              <span class="recording-state"><i></i> REC 00:18</span>
+            </div>
+
+            <div class="capture-stage">
+              <div class="capture-app">
+                <div class="app-rail" aria-hidden="true">
+                  <span class="rail-active"></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="app-code" aria-hidden="true">
+                  <p><b>48</b><span>const result = await api.deploy(config)</span></p>
+                  <p><b>49</b><span>if (!result.ok) throw new Error(</span></p>
+                  <p class="code-error"><b>50</b><span>&nbsp;&nbsp;`Deploy failed: ${result.status}`</span></p>
+                  <p><b>51</b><span>)</span></p>
+                  <p><b>52</b><span>return result.url</span></p>
+                </div>
+                <div class="capture-terminal">
+                  <p><span>$</span> npm run deploy</p>
+                  <p class="terminal-muted">Building production bundle… done</p>
+                  <p class="terminal-error">Error: HTTP 403 · project not found</p>
+                  <p class="terminal-caret"><span>$</span> <i></i></p>
+                </div>
+              </div>
+
+              <ol class="event-ledger" aria-label="Собранные события">
+                <li><time>00:04</time><span>OCR</span><strong>npm run deploy</strong></li>
+                <li><time>00:11</time><span>AX</span><strong>Button · Deploy</strong></li>
+                <li><time>00:16</time><span>VOICE</span><strong>«После сборки получаю 403»</strong></li>
+                <li class="ledger-live"><time>00:18</time><span>ERROR</span><strong>project not found</strong></li>
+              </ol>
+            </div>
+
+            <div class="artifact-ribbon">
+              <div class="artifact-status">
+                <span class="artifact-check">✓</span>
+                <span><b>Контекст собран</b><small>4 источника · 0 кадров отправлено</small></span>
+              </div>
+              <div class="artifact-files" aria-label="Созданные файлы">
+                <span>agent_prompt.md</span><span>transcript.md</span><span>run.sh</span>
+              </div>
+            </div>
+          </div>
+          <p class="proof-caption"><span>Живой пример</span> Ошибка связана с действием и источником, а не вырвана из контекста.</p>
+        </div>
+
+        <a class="scroll-cue" href="#how" aria-label="Прокрутить к разделу как это работает">
+          <span>Как это работает</span><i></i>
+        </a>
+      </section>
+
+      <section class="signal-strip" aria-label="Проверяемые свойства продукта">
+        <div><strong>0</strong><span>кадров уходит в LLM<br />в text-only режиме</span></div>
+        <div><strong>5+</strong><span>готовых артефактов<br />на одну сессию</span></div>
+        <div><strong>80/80</strong><span>референсных сценариев<br />в локальном eval</span></div>
+        <div><strong>2</strong><span>языка интерфейса<br />русский и английский</span></div>
+      </section>
+
+      <section class="process section" id="how" aria-labelledby="process-title">
+        <div class="section-heading reveal">
+          <p class="section-index">01 / Сигнал в контексте</p>
+          <h2 id="process-title">Не пересказывайте баг.<br /><em>Покажите, что произошло.</em></h2>
+          <p>
+            Обычный скриншот фиксирует один момент. ScreenPrompt связывает экран, действия,
+            структурный текст и голос в воспроизводимую последовательность.
+          </p>
+        </div>
+
+        <div class="pipeline reveal" data-pipeline>
+          <div class="pipeline-controls" role="tablist" aria-label="Этапы обработки">
+            <button type="button" role="tab" aria-selected="true" data-step="0">
+              <span>01</span><b>Запись</b><small>Экран и действия</small>
+            </button>
+            <button type="button" role="tab" aria-selected="false" data-step="1" tabindex="-1">
+              <span>02</span><b>Понимание</b><small>OCR · AX · голос</small>
+            </button>
+            <button type="button" role="tab" aria-selected="false" data-step="2" tabindex="-1">
+              <span>03</span><b>Доказательства</b><small>Таймлайн и источники</small>
+            </button>
+            <button type="button" role="tab" aria-selected="false" data-step="3" tabindex="-1">
+              <span>04</span><b>Результат</b><small>Prompt · Script · Index</small>
+            </button>
+          </div>
+
+          <div class="pipeline-visual" data-pipeline-panel aria-live="polite">
+            <div class="pipeline-meta">
+              <span data-step-label>STEP 01 · CAPTURE</span>
+              <button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false">
+                <svg class="pause-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 3v10M12 3v10" /></svg>
+                <svg class="play-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="m5 3 7 5-7 5Z" /></svg>
+                <span data-motion-label>Пауза</span>
+              </button>
+            </div>
+
+            <div class="pipeline-scene" data-scene="capture">
+              <div class="scene-copy">
+                <p class="scene-kicker" data-scene-kicker>Входной сигнал</p>
+                <h3 data-scene-title>Короткая запись вместо длинного объяснения</h3>
+                <p data-scene-description>
+                  Запишите проблему, остановите запись и сразу переходите к анализу. ScreenPrompt не
+                  предназначен для постоянного наблюдения за экраном.
+                </p>
+              </div>
+              <div class="scene-artifact" aria-hidden="true">
+                <div class="signal-map">
+                  <span style="--x: 8%; --h: 32%"></span><span style="--x: 14%; --h: 60%"></span>
+                  <span style="--x: 20%; --h: 42%"></span><span style="--x: 27%; --h: 78%"></span>
+                  <span style="--x: 35%; --h: 54%"></span><span style="--x: 43%; --h: 90%"></span>
+                  <span style="--x: 52%; --h: 38%"></span><span style="--x: 60%; --h: 72%"></span>
+                  <span style="--x: 70%; --h: 46%"></span><span style="--x: 80%; --h: 68%"></span>
+                  <span style="--x: 90%; --h: 40%"></span>
+                  <i data-scene-cursor></i>
+                </div>
+                <div class="scene-output" data-scene-output>
+                  <span>recording.mp4</span><b>18.4 sec</b><small>display 1 · sharp-ocr</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="pipeline-progress" aria-hidden="true"><span data-pipeline-progress></span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="capabilities section" id="features" aria-labelledby="features-title">
+        <div class="section-heading compact reveal">
+          <p class="section-index">02 / Возможности</p>
+          <h2 id="features-title">Из видео — в материал,<br /><em>с которым можно работать.</em></h2>
+        </div>
+
+        <div class="capability-list">
+          <article class="capability reveal">
+            <span class="capability-number">01</span>
+            <div>
+              <p class="capability-label">Capture</p>
+              <h3>Записывает короткую рабочую сессию</h3>
+            </div>
+            <p>
+              Экран, выбранный дисплей, клики и клавиатура. На macOS доступен системный выбор экрана;
+              FFmpeg остаётся проверенным fallback.
+            </p>
+          </article>
+          <article class="capability reveal">
+            <span class="capability-number">02</span>
+            <div>
+              <p class="capability-label">Understand</p>
+              <h3>Читает не только пиксели</h3>
+            </div>
+            <p>
+              OCR видит текст на кадрах, Accessibility добавляет структуру интерфейса, а опциональный
+              Whisper связывает вашу голосовую подсказку с моментом на таймлайне.
+            </p>
+          </article>
+          <article class="capability reveal">
+            <span class="capability-number">03</span>
+            <div>
+              <p class="capability-label">Evidence</p>
+              <h3>Привязывает вывод к источнику</h3>
+            </div>
+            <p>
+              Команда, ошибка или действие получают время и происхождение: OCR, AX, input или narration.
+              Низкая уверенность превращается в TODO, а не в опасную догадку.
+            </p>
+          </article>
+          <article class="capability reveal">
+            <span class="capability-number">04</span>
+            <div>
+              <p class="capability-label">Deliver</p>
+              <h3>Собирает пакет для следующего шага</h3>
+            </div>
+            <p>
+              Промпт для coding-агента, текстовый таймлайн, JSON-индекс и shell-скрипт для вашей ОС.
+              Выполнение отделено от анализа и требует явного подтверждения.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="privacy section" id="privacy" aria-labelledby="privacy-title">
+        <div class="privacy-intro reveal">
+          <p class="section-index">03 / Приватность по конструкции</p>
+          <h2 id="privacy-title">Ваш экран остаётся<br /><em>на вашей стороне.</em></h2>
+          <p>
+            По умолчанию ScreenPrompt отправляет модели только очищенный текстовый индекс. Кадры,
+            запись экрана и исходное аудио остаются локально.
+          </p>
+        </div>
+
+        <div class="privacy-lab reveal" data-privacy-lab>
+          <div class="privacy-tabs" role="tablist" aria-label="Режим обработки">
+            <button type="button" role="tab" aria-selected="true" data-privacy-mode="local">
+              Локальный режим
+            </button>
+            <button type="button" role="tab" aria-selected="false" data-privacy-mode="cloud" tabindex="-1">
+              С LLM
+            </button>
+          </div>
+
+          <div class="privacy-diagram" data-privacy-panel aria-live="polite">
+            <div class="privacy-node source">
+              <span>01 · RAW</span><b>recording.mp4</b><small>локальный файл</small>
+            </div>
+            <div class="privacy-arrow"><i></i><span>OCR · AX · Whisper</span></div>
+            <div class="privacy-node filter">
+              <span>02 · FILTER</span><b>Redact + text-only</b><small>ключи · email · JWT</small>
+            </div>
+            <div class="privacy-arrow"><i></i><span data-privacy-transfer>без сети</span></div>
+            <div class="privacy-node destination" data-privacy-destination>
+              <span>03 · RESULT</span><b>Local prompt</b><small>images_sent_to_llm: 0</small>
+            </div>
+          </div>
+
+          <div class="privacy-facts">
+            <div><span>Кадры в LLM</span><strong data-privacy-images>0</strong></div>
+            <div><span>Сырое аудио в LLM</span><strong>Никогда</strong></div>
+            <div><span>Маскировка текста</span><strong>Включена</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="artifacts section" aria-labelledby="artifacts-title">
+        <div class="section-heading reveal">
+          <p class="section-index">04 / Результат</p>
+          <h2 id="artifacts-title">Один сеанс.<br /><em>Пять полезных артефактов.</em></h2>
+          <p>Они остаются читаемыми без ScreenPrompt и подходят человеку, CLI-агенту или MCP-клиенту.</p>
+        </div>
+
+        <div class="artifact-stack reveal">
+          <article>
+            <span>01</span><div><b>agent_prompt.md</b><p>Задача, наблюдения, доказательства и безопасный следующий шаг.</p></div><em>AGENT</em>
+          </article>
+          <article>
+            <span>02</span><div><b>transcript.md</b><p>Сводный таймлайн OCR, AX, действий и голосовой дорожки.</p></div><em>HUMAN</em>
+          </article>
+          <article>
+            <span>03</span><div><b>index.json</b><p>Машиночитаемые состояния, confidence и ссылки на источники.</p></div><em>DATA</em>
+          </article>
+          <article>
+            <span>04</span><div><b>run.sh / run.ps1</b><p>Best-effort команды для macOS, Linux или Windows с safety-фильтром.</p></div><em>SHELL</em>
+          </article>
+          <article>
+            <span>05</span><div><b>quality_report.json</b><p>Качество распознавания, источники, privacy и safety-сигналы.</p></div><em>PROOF</em>
+          </article>
+        </div>
+      </section>
+
+      <section class="download section" id="download" aria-labelledby="download-title">
+        <div class="download-heading reveal">
+          <p class="section-index">05 / Скачать</p>
+          <h2 id="download-title">Покажите проблему.<br /><em>Дальше будет проще.</em></h2>
+          <p>
+            Выберите сборку для своей системы. Preview-версии не подписаны коммерческим сертификатом;
+            статус каждой платформы указан прямо в карточке.
+          </p>
+        </div>
+
+        <!--
+          RU: Установщики раздаются из открытого репозитория ScreenPrompt-releases (только сборки).
+              Исходники закрыты 04.10.2026 — ссылки на Linx72/ScreenPrompt отдают 404, не возвращать их.
+          EN: Installers are served from the public ScreenPrompt-releases repo (builds only).
+              Sources were made private on 2026-10-04 — Linx72/ScreenPrompt links return 404, do not restore them.
+        -->
+        <div class="download-list reveal">
+          <article class="download-item" data-platform="mac">
+            <div class="platform-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M31.7 25.4c0-5 4.1-7.4 4.3-7.5a9.2 9.2 0 0 0-7.2-3.9c-3-.3-5.9 1.8-7.5 1.8-1.6 0-4-1.8-6.6-1.7a9.8 9.8 0 0 0-8.3 5c-3.5 6.1-.9 15.2 2.5 20.2 1.7 2.4 3.7 5.1 6.4 5 2.5-.1 3.5-1.6 6.6-1.6s4 1.6 6.7 1.5c2.8 0 4.5-2.4 6.2-4.9a21.8 21.8 0 0 0 2.8-5.8 8.8 8.8 0 0 1-5.9-8.1ZM26.8 10.8A8.9 8.9 0 0 0 28.9 4a9.2 9.2 0 0 0-6.1 3.2 8.5 8.5 0 0 0-2.2 6.5 7.6 7.6 0 0 0 6.2-2.9Z" /></svg>
+            </div>
+            <div class="download-copy">
+              <div class="download-status"><span class="status-preview">Preview</span><span>v0.1.0</span></div>
+              <h3>macOS · Apple Silicon</h3>
+              <p>DMG · ≈121 МБ · macOS 13+ · сборка без Developer ID и нотарификации</p>
+            </div>
+            <a
+              class="download-action"
+              href="https://github.com/Linx72/ScreenPrompt-releases/releases/download/v0.1.0/ScreenPrompt_0.1.0_aarch64.dmg"
+              data-download-mac
+            >
+              <span>Скачать DMG</span><small>GitHub Release</small>
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10m0 0 4-4m-4 4L6 9M4 17h12" /></svg>
+            </a>
+          </article>
+
+          <article class="download-item" data-platform="windows">
+            <div class="platform-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="m5 8 16-2.2v16.7H5V8Zm18.2-2.5L43 2.8v19.7H23.2v-17ZM5 24.7h16v16.8L5 39.3V24.7Zm18.2 0H43v19.7l-19.8-2.7v-17Z" /></svg>
+            </div>
+            <div class="download-copy">
+              <div class="download-status"><span class="status-preview">Preview</span><span>v0.1.0</span></div>
+              <h3>Windows · x64</h3>
+              <p>EXE · ≈124 МБ · Windows 10+ · без Authenticode; MSI доступен в релизе</p>
+            </div>
+            <a
+              class="download-action"
+              href="https://github.com/Linx72/ScreenPrompt-releases/releases/download/v0.1.0/ScreenPrompt_0.1.0_x64-setup.exe"
+              data-download-windows
+            >
+              <span>Скачать EXE</span><small>GitHub Release</small>
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10m0 0 4-4m-4 4L6 9M4 17h12" /></svg>
+            </a>
+          </article>
+        </div>
+
+        <div class="release-note reveal">
+          <span>Важно</span>
+          <p>
+            Текущие Desktop-сборки — технический preview. Для публичного коммерческого релиза ещё нужны
+            Apple Developer ID / notarization и Windows Authenticode. Все версии и MSI для Windows —
+            на <a href="https://github.com/Linx72/ScreenPrompt-releases/releases">странице релизов</a>.
+          </p>
+        </div>
+      </section>
+
+      <section class="faq section" aria-labelledby="faq-title">
+        <div class="section-heading compact reveal">
+          <p class="section-index">06 / Коротко о главном</p>
+          <h2 id="faq-title">Вопросы до первой записи</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details>
+            <summary>ScreenPrompt сам исправляет проблему?</summary>
+            <p>
+              Он готовит проверяемый контекст и безопасный следующий шаг. Решение выполняет человек или
+              выбранный coding-агент; потенциально опасные команды не запускаются автоматически.
+            </p>
+          </details>
+          <details>
+            <summary>Видео отправляется в облако?</summary>
+            <p>
+              В режиме по умолчанию — нет. Модель получает очищенный текстовый индекс, а локальные кадры,
+              видео и исходное аудио остаются в папке сессии.
+            </p>
+          </details>
+          <details>
+            <summary>Подойдёт только для терминала?</summary>
+            <p>
+              Нет. ScreenPrompt умеет разбирать терминал, IDE и обычные GUI-сценарии. Accessibility
+              помогает увидеть роли и подписи элементов, а OCR остаётся fallback для недоступных окон.
+            </p>
+          </details>
+          <details>
+            <summary>Почему preview не подписан?</summary>
+            <p>
+              Код и сборка уже проходят локальные структурные проверки, но сертификаты Apple и Microsoft —
+              отдельный владелецкий релизный этап. Сайт явно показывает эту границу до скачивания.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true">
+          <path d="M4 13V4h9M23 4h9v9M32 23v9h-9M13 32H4v-9" />
+          <path d="m12 13 6 5-6 5M20 23h6" />
+        </svg>
+        <div><strong>ScreenPrompt</strong><span>Покажите проблему. Передайте контекст.</span></div>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/Linx72/ScreenPrompt-releases/releases">Все версии</a>
+        <a href="https://github.com/Linx72/ScreenPrompt-releases/releases/tag/v0.1.0">Что нового в v0.1.0</a>
+      </div>
+      <p class="footer-meta">© <span data-year>2026</span> ScreenPrompt · v0.1.0</p>
+    </footer>
+
+    <div class="toast" role="status" aria-live="polite" data-toast></div>
+    <script src="app.js" defer></script>
+  </body>
+</html>
